@@ -21,3 +21,13 @@ std::string Token::toString()
 	s = s + "TOKEN-> tag: " + (char)tokenTag;
 	return s;
 }
+
+int Token::getTag()
+{
+	return tokenTag;
+}
+
+Token* Token::getThis()
+{
+	return this;
+}

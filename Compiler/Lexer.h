@@ -20,6 +20,7 @@ public:
 	void reserveWord(Word* w);
 	bool eof();
 	Word* getWord(std::string word);
+	int getLine();
 
 private:
 	FILE* pFile;

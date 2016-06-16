@@ -20,3 +20,13 @@ std::string Type::toString()
 {
 	return "TYPE-> lexeme: " + getLexeme() + "  tag: " + std::to_string(tokenTag) + "  width: " + std::to_string(width);
 }
+
+int Type::getWidth()
+{
+	return width;
+}
+
+Type* Type::getThis()
+{
+	return this;
+}

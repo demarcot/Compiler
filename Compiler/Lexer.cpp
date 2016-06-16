@@ -1,4 +1,4 @@
-#pragma once
+
 #include "Lexer.h"
 
 Lexer::Lexer()
@@ -21,10 +21,10 @@ Lexer::Lexer()
 	reserveWord(new Word("==", Tag::EQ));
 	reserveWord(new Word("<=", Tag::LE));
 	reserveWord(new Word(">=", Tag::GE));
-	reserveWord(new Type("int", Tag::INT, 2));
-	reserveWord(new Type("double", Tag::DOUBLE, 8));
-	reserveWord(new Type("bool", Tag::BOOL, 1));
-	reserveWord(new Type("char", Tag::CHAR, 1));
+	reserveWord(new Type("int", Tag::BASIC, 2));
+	reserveWord(new Type("double", Tag::BASIC, 8));
+	reserveWord(new Type("bool", Tag::BASIC, 1));
+	reserveWord(new Type("char", Tag::BASIC, 1));
 	reserveWord(new Word("true", Tag::TRUE));
 	reserveWord(new Word("false", Tag::FALSE));
 
@@ -226,9 +226,15 @@ bool Lexer::eof()
 	return std::feof(pFile);
 }
 
+int Lexer::getLine()
+{
+	return lineNo;
+}
+
 /*
 	MAIN FUNCTION - Testing lexical analyzer.
 */
+/*
 int main()
 {
 	Lexer lex;
@@ -236,3 +242,5 @@ int main()
 		std::cout << lex.Lexan()->toString() << "\n\n";
 	return 0;
 }
+
+*/

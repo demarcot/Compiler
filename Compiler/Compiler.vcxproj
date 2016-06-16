@@ -79,20 +79,31 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="Env.h" />
+    <ClInclude Include="Id.h" />
     <ClInclude Include="Lexer.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="Num.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Real.h" />
+    <ClInclude Include="Seq.h" />
+    <ClInclude Include="Stmt.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Type.h" />
     <ClInclude Include="Word.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="Dict.cpp" />
+    <ClCompile Include="Env.cpp" />
+    <ClCompile Include="Id.cpp" />
     <ClCompile Include="Lexer.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="Num.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Real.cpp" />
+    <ClCompile Include="Seq.cpp" />
+    <ClCompile Include="Stmt.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Type.cpp" />
     <ClCompile Include="Word.cpp" />

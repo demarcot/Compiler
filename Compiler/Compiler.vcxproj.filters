@@ -13,57 +13,114 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Lexer">
+      <UniqueIdentifier>{c6a001e1-2723-4b85-b9a4-4b47f5d3c0a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Lexer">
+      <UniqueIdentifier>{2174d1db-950b-4372-bd26-51b16685fa85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Parser">
+      <UniqueIdentifier>{d4f46158-bf66-4222-b3ea-946105dcb387}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Parser">
+      <UniqueIdentifier>{9d07dfd4-2b40-46f5-a833-dde063ce65af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Util">
+      <UniqueIdentifier>{8afa2d23-29d4-446d-9deb-fe37711e7ec7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Util">
+      <UniqueIdentifier>{aab6c851-de6b-4daf-a85e-0cc9858a9fd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Inter">
+      <UniqueIdentifier>{c97ddf3c-2d94-4dea-ad8b-891b9c0f95a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Inter">
+      <UniqueIdentifier>{11ee78d5-3eeb-445f-aa81-2dad901434ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Compiler.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Parser.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Lexer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Token.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Word.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lexer</Filter>
     </ClInclude>
     <ClInclude Include="Num.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lexer</Filter>
     </ClInclude>
     <ClInclude Include="Real.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Token.h">
+      <Filter>Header Files\Lexer</Filter>
     </ClInclude>
     <ClInclude Include="Type.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Word.h">
+      <Filter>Header Files\Lexer</Filter>
+    </ClInclude>
+    <ClInclude Include="Env.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Id.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Parser.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Stmt.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Seq.h">
+      <Filter>Header Files\Inter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compiler.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Parser.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Lexer.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Token.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Word.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Lexer</Filter>
     </ClCompile>
     <ClCompile Include="Num.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Lexer</Filter>
     </ClCompile>
     <ClCompile Include="Real.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="Token.cpp">
+      <Filter>Source Files\Lexer</Filter>
     </ClCompile>
     <ClCompile Include="Type.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="Word.cpp">
+      <Filter>Source Files\Lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="Env.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Id.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Parser.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="Dict.cpp">
+      <Filter>Source Files\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Stmt.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Seq.cpp">
+      <Filter>Source Files\Inter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

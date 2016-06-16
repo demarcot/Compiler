@@ -24,7 +24,7 @@ public:
 		WRITE = 268,
 		PUBLISH = 269,
 		CHAPTER = 270,
-		FLASHBACK = 271,
+		FLASHBACK = 271,	//only use publish?
 		CLIFFHANGER = 272,
 		ALTERNATIVE = 273,
 		COPYPAGE = 274,
@@ -34,7 +34,8 @@ public:
 		DOUBLE = 278,
 		BOOL = 279,
 		TRUE = 280,
-		FALSE = 281
+		FALSE = 281,
+		BASIC = 282
 		;
 };
 
@@ -46,6 +47,8 @@ public:
 	~Token();
 
 	virtual std::string toString();
+	int getTag();
+	virtual Token* getThis();
 private:
 	
 protected:

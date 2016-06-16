@@ -9,6 +9,8 @@ public:
 	~Type();
 
 	std::string toString();
+	int getWidth();
+	virtual Type* getThis();
 private:
 	int width;
 };
