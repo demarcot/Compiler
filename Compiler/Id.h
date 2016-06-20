@@ -1,8 +1,9 @@
 #pragma once
 #include "Token.h"
 #include "Type.h"
+#include "Expr.h"
 
-class Id
+class Id : public Expr
 {
 public:
 	Id();

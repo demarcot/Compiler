@@ -78,6 +78,27 @@
     <ClInclude Include="Seq.h">
       <Filter>Header Files\Inter</Filter>
     </ClInclude>
+    <ClInclude Include="If.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Else.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Expr.h">
+      <Filter>Header Files\Parser</Filter>
+    </ClInclude>
+    <ClInclude Include="While.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Arith.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Constant.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
+    <ClInclude Include="Rel.h">
+      <Filter>Header Files\Inter</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Compiler.cpp">
@@ -120,6 +141,27 @@
       <Filter>Source Files\Inter</Filter>
     </ClCompile>
     <ClCompile Include="Seq.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="If.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Else.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Expr.cpp">
+      <Filter>Source Files\Parser</Filter>
+    </ClCompile>
+    <ClCompile Include="While.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Arith.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Constant.cpp">
+      <Filter>Source Files\Inter</Filter>
+    </ClCompile>
+    <ClCompile Include="Rel.cpp">
       <Filter>Source Files\Inter</Filter>
     </ClCompile>
   </ItemGroup>

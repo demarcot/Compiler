@@ -6,5 +6,6 @@ class Stmt :
 public:
 	Stmt();
 	~Stmt();
+
 };
 

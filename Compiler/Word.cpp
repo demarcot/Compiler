@@ -1,5 +1,7 @@
 #include "Word.h"
 
+Word* Words::True = new Word("true", Tag::TRUE);
+Word* Words::False = new Word("false", Tag::FALSE);
 
 Word::Word()
 {

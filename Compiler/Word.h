@@ -11,11 +11,18 @@ public:
 	Word(std::string s, int tag);
 	~Word();
 
-	std::string getLexeme();
+	virtual std::string getLexeme();
 	int getTag();
 	virtual std::string toString();
 	void setLexeme(std::string str);
 private:
 	std::string lexeme;
+};
+
+class Words
+{
+public:
+	static Word* True;
+	static Word* False;
 };
 

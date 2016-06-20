@@ -1,5 +1,9 @@
 #include "Type.h"
 
+Type* Types::Int = new Type("int", Tag::BASIC, 4);
+Type* Types::Double = new Type("double", Tag::DOUBLE, 16);
+Type* Types::Char = new Type("char", Tag::CHAR, 1);
+Type* Types::Bool = new Type("bool", Tag::BOOL, 1);
 
 Type::Type()
 {

@@ -78,34 +78,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Arith.h" />
     <ClInclude Include="Compiler.h" />
+    <ClInclude Include="Constant.h" />
+    <ClInclude Include="Else.h" />
     <ClInclude Include="Env.h" />
+    <ClInclude Include="Expr.h" />
     <ClInclude Include="Id.h" />
+    <ClInclude Include="If.h" />
     <ClInclude Include="Lexer.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Num.h" />
     <ClInclude Include="Parser.h" />
     <ClInclude Include="Real.h" />
+    <ClInclude Include="Rel.h" />
     <ClInclude Include="Seq.h" />
     <ClInclude Include="Stmt.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Type.h" />
+    <ClInclude Include="While.h" />
     <ClInclude Include="Word.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Arith.cpp" />
     <ClCompile Include="Compiler.cpp" />
+    <ClCompile Include="Constant.cpp" />
     <ClCompile Include="Dict.cpp" />
+    <ClCompile Include="Else.cpp" />
     <ClCompile Include="Env.cpp" />
+    <ClCompile Include="Expr.cpp" />
     <ClCompile Include="Id.cpp" />
+    <ClCompile Include="If.cpp" />
     <ClCompile Include="Lexer.cpp" />
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Num.cpp" />
     <ClCompile Include="Parser.cpp" />
     <ClCompile Include="Real.cpp" />
+    <ClCompile Include="Rel.cpp" />
     <ClCompile Include="Seq.cpp" />
     <ClCompile Include="Stmt.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Type.cpp" />
+    <ClCompile Include="While.cpp" />
     <ClCompile Include="Word.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

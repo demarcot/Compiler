@@ -3,6 +3,7 @@
 
 Stmt::Stmt()
 {
+	std::cout << "New Stmt()\n";
 }
 
 

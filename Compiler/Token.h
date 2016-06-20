@@ -35,7 +35,8 @@ public:
 		BOOL = 279,
 		TRUE = 280,
 		FALSE = 281,
-		BASIC = 282
+		BASIC = 282,
+		COMPOP = 283
 		;
 };
 
