@@ -22,7 +22,7 @@ void Env::put(Token* w, Id* i)
 
 Id* Env::get(Token* w)
 {
-	Id* temp =  symTable.get(w);
+	Id* temp = symTable.get(w);
 	if (temp == NULL)
 	{
 		temp = this->prev->get(w);

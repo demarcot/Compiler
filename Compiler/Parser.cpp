@@ -67,7 +67,6 @@ Stmt* Parser::block()
 	std::cout << "Symbol table at end of block():\n\n";
 	top->printSymTable();
 	std::cout << "\n\n";
-	delete(top);
 	top = saved;
 	return s;
 }
@@ -89,9 +88,6 @@ void Parser::decls()
 		Id* id = new Id((Word*)tok, p, used);
 		top->put(tok, id);
 		used = used + p->getWidth();
-		delete(id);
-		delete(p);
-		delete(tok);
 	}
 }
 

@@ -106,7 +106,7 @@
       <Filter>Header Files\Inter</Filter>
     </ClInclude>
     <ClInclude Include="Print.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Inter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -177,7 +177,7 @@
       <Filter>Source Files\Inter</Filter>
     </ClCompile>
     <ClCompile Include="Print.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Inter</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
