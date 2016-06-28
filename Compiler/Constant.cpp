@@ -10,6 +10,8 @@ Constant::Constant()
 Constant::Constant(Token* tok, Type* typ)
 {
 	std::cout << "New Constant()\n";
+	this->setOp(tok);
+	this->setType(typ);
 }
 
 Constant::~Constant()

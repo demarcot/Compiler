@@ -3,12 +3,13 @@
 Parser::Parser()
 {
 	//create lexer and get first token
+	symTableLevel = 0;
+	top = NULL;
 	move();
 }
 
 Parser::~Parser()
 {
-
 }
 
 void Parser::move()
@@ -25,22 +26,18 @@ void Parser::match(int t)
 		move();
 	else
 	{
-		std::cout << "-----ERROR IN PARSER-----  NEAR LINE: " << lex.getLine() << std::endl;
-		std::cout << "The token " << look->getTag() << " did not match the expected token of " << t << std::endl;
-		exit(EXIT_FAILURE); // call error method
+		error("The token " + std::to_string(look->getTag()) + " did not match the expected token of " + std::to_string(t));
 	}
 }
 
 void Parser::error(std::string s)
 {
-	std::cout << "Error in parser with message:\n" + s << std::endl;
+	std::cout << "Error in parser with message:\n" + s << std::endl << "Lexer line: " << Lexer::lineNoCopy << std::endl;
 	exit(EXIT_FAILURE);
 }
 
 /*
-
 		-----GRAMMAR-----
-
 */
 
 void Parser::start()
@@ -51,7 +48,7 @@ void Parser::start()
 
 	Stmt* s = block();
 
-
+	std::cout << "Bytes used in symbol tables: " << used << std::endl;
 }
 
 Stmt* Parser::block()
@@ -61,13 +58,15 @@ Stmt* Parser::block()
 	match('{');
 
 	Env* saved = top;
-	top = new Env();
+	top = new Env(saved);
 
 	decls();
-	Stmt* s = stmts();		//do i want to dereference here???
+	Stmt* s = stmts();		
 
 	match('}');
-
+	std::cout << "Symbol table at end of block():\n\n";
+	top->printSymTable();
+	std::cout << "\n\n";
 	delete(top);
 	top = saved;
 	return s;
@@ -80,16 +79,19 @@ void Parser::decls()
 	while (look->getTag() == Tag::BASIC)	//TODO: (Done?) have all types be tagged as BASIC
 	{
 		/** call type() */
-		Type p = *type();	//type() returns a pointer so I guess I just dereference it?
-		Token tok = *look;
+		Type* p = type();	//type() returns a pointer 
+		Token* tok = look;
 
 		match(Tag::ID);
 		match(';');
 
 		/** Create node in syntax tree */
-		Id id = Id(tok, p, used);
+		Id* id = new Id((Word*)tok, p, used);
 		top->put(tok, id);
-		used = used + p.getWidth();
+		used = used + p->getWidth();
+		delete(id);
+		delete(p);
+		delete(tok);
 	}
 }
 
@@ -133,6 +135,12 @@ Stmt* Parser::stmt()
 			match(')');
 			s = stmt();
 			return new While(x, s);
+		case Tag::PRINT:
+			match(Tag::PRINT);
+			match('(');
+			x = expr();
+			match(')');
+			return new Print(x);
 
 		case '{':
 			return block();
@@ -145,8 +153,25 @@ Stmt* Parser::stmt()
 
 Type* Parser::type()
 {
-	match(Tag::BASIC);
 	Type* t = (Type*)look->getThis();
+	if (t->getLexeme() == "int")
+	{
+		t = Types::Int;
+	}
+	else if (t->getLexeme() == "char")
+	{
+		t = Types::Char;
+	}
+	else if (t->getLexeme() == "bool")
+	{
+		t = Types::Bool;
+	}
+	else if (t->getLexeme() == "double")
+	{
+		t = Types::Double;
+	}
+	//match(Tag::BASIC);
+	move();
 
 	return t;
 }
@@ -164,11 +189,15 @@ Stmt* Parser::assign()
 {
 	std::cout << "In assign()\n\n";
 
+	Id* getId = top->get(look);
+	if (getId == NULL)
+	{
+		error("Attempted to assign to an undeclared variable.");
+	}
 	match(Tag::ID);
 	match('=');
-	match(Tag::NUM);
-	match(';');
-	return new Stmt();
+	
+	return new Set(getId, boolFunc());
 }
 
 Expr* Parser::expr()
@@ -249,7 +278,7 @@ Expr* Parser::factor()
 		return n;
 
 	case Tag::TRUE:
-		n = Constants::True;                       // Return Constant node
+		n = new Constant(Words::True, Types::Bool);                       // Return Constant node
 		move();
 		return n;
 
@@ -265,7 +294,7 @@ Expr* Parser::factor()
 	case Tag::ID:
 		std::string s = look->toString();
 
-		Id* id = &top->get(*look);                   // Lookup in symbol table
+		Id* id = top->get(look);                   // Lookup in symbol table
 
 		if (id == NULL)                         // Not found...
 			error(s + " undeclared");

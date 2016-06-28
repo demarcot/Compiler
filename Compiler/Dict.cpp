@@ -1,19 +1,4 @@
-#pragma once
-#include <iostream>
-#include <vector>
-#include <string>
-#include "Token.h"
-#include "Id.h"
-
-class Dict
-{
-private:
-	std::vector<Token*> keyVec;
-	std::vector<Id*> valVec;
-public:
-	void put(Token* key, Id* value);
-	Id* get(Token*);
-};
+#include "Dict.h"
 
 void Dict::put(Token* key, Id* value)
 {
@@ -35,4 +20,21 @@ Id* Dict::get(Token* key)
 	}
 
 	return NULL;
+}
+
+int Dict::size()
+{
+	assert(keyVec.size() == valVec.size());
+	return keyVec.size();
+}
+
+void Dict::printAll()
+{
+	Word* temp;
+	for (int i = 0; i < this->size(); i++)
+	{
+		temp = (Word*)keyVec.at(i);
+		std::cout << "[" << i << "] Key Token:\n\t" << temp->getLexeme() << std::endl;
+		std::cout << "[" << i << "] Value Id:\n" << "\tOp tag: " << valVec.at(i)->getOp()->getTag() << "\n\tType lexeme: " << valVec.at(i)->getType()->getLexeme() << std::endl;
+	}
 }

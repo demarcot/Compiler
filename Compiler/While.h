@@ -9,5 +9,8 @@ public:
 	While();
 	While(Expr* x, Stmt* s);
 	~While();
+private:
+	Expr* expr;
+	Stmt* stmt;
 };
 

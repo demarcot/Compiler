@@ -11,6 +11,9 @@
 #include "Constant.h"
 #include "Arith.h"
 #include "Rel.h"
+#include "Dict.h"
+#include "Set.h"
+#include "Print.h"
 
 class Parser
 {
@@ -39,5 +42,6 @@ private:
 	Lexer lex;	//lexical analyzer owned by parser
 	Token* look; //lookahead token
 	Env* top;   //top symbol table
+	int symTableLevel;
 	int used;   //amount of memory allocated in bytes
 };

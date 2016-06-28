@@ -22,6 +22,8 @@ public:
 	Word* getWord(std::string word);
 	int getLine();
 
+	static int lineNoCopy;
+
 private:
 	FILE* pFile;
 	std::string fileName;

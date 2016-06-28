@@ -12,6 +12,8 @@ public:
 	std::string toString();
 	int getWidth();
 	virtual Type* getThis();
+	static bool numeric(Type* typ);
+	static Type* max(Type* typ1, Type* typ2);
 	
 private:
 	int width;

@@ -81,6 +81,7 @@
     <ClInclude Include="Arith.h" />
     <ClInclude Include="Compiler.h" />
     <ClInclude Include="Constant.h" />
+    <ClInclude Include="Dict.h" />
     <ClInclude Include="Else.h" />
     <ClInclude Include="Env.h" />
     <ClInclude Include="Expr.h" />
@@ -90,9 +91,11 @@
     <ClInclude Include="Node.h" />
     <ClInclude Include="Num.h" />
     <ClInclude Include="Parser.h" />
+    <ClInclude Include="Print.h" />
     <ClInclude Include="Real.h" />
     <ClInclude Include="Rel.h" />
     <ClInclude Include="Seq.h" />
+    <ClInclude Include="Set.h" />
     <ClInclude Include="Stmt.h" />
     <ClInclude Include="Token.h" />
     <ClInclude Include="Type.h" />
@@ -113,9 +116,11 @@
     <ClCompile Include="Node.cpp" />
     <ClCompile Include="Num.cpp" />
     <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="Print.cpp" />
     <ClCompile Include="Real.cpp" />
     <ClCompile Include="Rel.cpp" />
     <ClCompile Include="Seq.cpp" />
+    <ClCompile Include="Set.cpp" />
     <ClCompile Include="Stmt.cpp" />
     <ClCompile Include="Token.cpp" />
     <ClCompile Include="Type.cpp" />

@@ -19,7 +19,7 @@ Node::Node(Lexer* lex)
 
 void Node::error(std::string s)
 {
-	std::cout << "Error in node on line: " << NodeLex->getLine() << std::endl;
+	std::cout << "Error in node on line: " << Lexer::lineNoCopy << std::endl << "Error message: " << s << std::endl;
 	exit(EXIT_FAILURE);
 }
 

@@ -34,5 +34,5 @@ int Word::getTag()
 
 std::string Word::toString()
 {
-	return "WORD-> lexeme: " + lexeme + "  token: " + std::to_string(tokenTag);
+	return "lexeme: " + lexeme + "  token: " + std::to_string(tokenTag);
 }

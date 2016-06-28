@@ -7,7 +7,9 @@ class Id : public Expr
 {
 public:
 	Id();
-	Id(Token tok, Type t, int memUsed);
+	Id(Word* tok, Type* t, int memUsed);
 	~Id();
+private:
+	int offset;
 };
 

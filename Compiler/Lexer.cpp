@@ -1,9 +1,12 @@
 
 #include "Lexer.h"
 
+int Lexer::lineNoCopy;
+
 Lexer::Lexer()
 : skipRead(false)
 {
+	Lexer::lineNoCopy = 1;
 	/*
 		Load all reserved words.
 	*/
@@ -77,6 +80,7 @@ Token* Lexer::Lexan()
 		if (peek == '\n')		//Increase lineNo counter for every line. Skip other whitespace.
 		{
 			lineNo++;
+			Lexer::lineNoCopy++;
 		}
 		else if (peek != ' ' && peek != '\t')
 		{
