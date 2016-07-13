@@ -21,7 +21,9 @@ Set::~Set()
 Type* Set::check(Type* typ1, Type* typ2)
 {
 	if (Type::numeric(typ1) && Type::numeric(typ2))
+	{
 		return typ2;
+	}
 	else if (typ1->getTag() == Types::Bool->getTag() && typ2->getTag() == Types::Bool->getTag())
 		return typ2;
 	else

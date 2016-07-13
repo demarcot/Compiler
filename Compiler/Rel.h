@@ -7,5 +7,8 @@ public:
 	Rel();
 	Rel(Token* tok, Expr* expr1, Expr* expr2);
 	~Rel();
+private:
+	Expr* expr1;
+	Expr* expr2;
 };
 

@@ -11,7 +11,7 @@ If::If(Expr* x, Stmt* stmt1)
 	expr = x;  
 	stmt = stmt1;
 	if (expr->getType()->getLexeme() != Types::Bool->getLexeme()) 
-		expr->error("boolean required in if");
+		Parser::error("boolean required in If(cliffhanger)");
 }
 
 If::~If()

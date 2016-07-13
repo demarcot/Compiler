@@ -25,7 +25,10 @@ Id* Env::get(Token* w)
 	Id* temp = symTable.get(w);
 	if (temp == NULL)
 	{
-		temp = this->prev->get(w);
+		if (this->prev != NULL)
+			temp = this->prev->get(w);
+		else
+			return NULL;
 	}
 	return temp;
 }

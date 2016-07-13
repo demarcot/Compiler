@@ -14,7 +14,7 @@ Arith::Arith(Token* tok, Expr* expr1, Expr* expr2)
 	this->setType(Type::max(expr1->getType(), expr2->getType()));
 	std::cout << "\tArith type: " << this->getType()->getLexeme() << std::endl;
 	if (this->getType() == NULL)
-		error("type error");
+		Parser::error("type error");
 	
 }
 

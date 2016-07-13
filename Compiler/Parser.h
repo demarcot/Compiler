@@ -22,7 +22,7 @@ public:
 	~Parser();
 	void move();
 	void match(int t);
-	void error(std::string s);
+	static void error(std::string s);
 
 	void start();
 	Stmt* block();
